@@ -1,0 +1,56 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-bg: #ffffff; /** Page background. */
+  --color-surface: #f5f7fa; /** Background for cards and panels raised above the page. */
+  --color-fg: #1a1f29; /** Primary text, meets WCAG AA (4.5:1) against color-bg. */
+  --color-fg-muted: #5b6472; /** Secondary text: timestamps, helper text, field labels. */
+  --color-border: #d7dce3; /** Dividers, card and input borders. */
+  --color-primary: #2563eb; /** Primary actions and links. */
+  --color-primary-fg: #ffffff; /** Text/icons placed on a color-primary surface. */
+  --color-success: #15803d; /** Approved/completed status text. */
+  --color-success-bg: #e6f4ea; /** Background tint for approved/completed status chips. */
+  --color-warning: #b45309; /** Pending/in-review status text. */
+  --color-warning-bg: #fef3e2; /** Background tint for pending/in-review status chips. */
+  --color-danger: #b91c1c; /** Rejected/error status text and destructive actions. */
+  --color-danger-bg: #fdeaea; /** Background tint for rejected/error status chips. */
+  --space-1: 4px; /** Tightest spacing: icon-to-label gaps. */
+  --space-2: 8px; /** Spacing within a control, e.g. button padding-block. */
+  --space-3: 12px; /** Spacing between related controls in a row. */
+  --space-4: 16px; /** Default padding inside cards and panels. */
+  --space-5: 24px; /** Gaps between cards/sections within a page. */
+  --space-6: 32px; /** Page-level margins and major section breaks. */
+  --radius-sm: 4px; /** Inputs, chips. */
+  --radius-md: 8px; /** Buttons. */
+  --radius-lg: 12px; /** Cards and panels. */
+  --font-family-base: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /** Default typeface for all UI text. */
+  --font-weight-regular: 400; /** Body text. */
+  --font-weight-semibold: 600; /** Headings, button labels, field labels. */
+  --line-height-base: 1.5; /** Default line-height for body copy. */
+  --font-size-sm: 12px; /** Helper text, table meta, chip labels. */
+  --font-size-md: 14px; /** Default body and control text. */
+  --font-size-lg: 18px; /** Card titles, section headings. */
+  --font-size-xl: 22px; /** Page titles. */
+  --button-primary-background: var(--color-primary); /** Primary (default) button background. */
+  --button-primary-foreground: var(--color-primary-fg); /** Primary button label/icon color. */
+  --button-primary-radius: var(--radius-md); /** Primary button corner radius. */
+  --button-secondary-background: var(--color-bg); /** Secondary button background. */
+  --button-secondary-foreground: var(--color-primary); /** Secondary button label/icon color. */
+  --button-secondary-border: var(--color-primary); /** Secondary button border color. */
+  --card-default-background: var(--color-surface); /** Card surface background. */
+  --card-default-border: var(--color-border); /** Card border color. */
+  --card-default-radius: var(--radius-lg); /** Card corner radius. */
+  --card-default-padding: var(--space-4); /** Card inner padding. */
+  --chip-success-background: var(--color-success-bg); /** Approved/completed status chip background. */
+  --chip-success-foreground: var(--color-success); /** Approved/completed status chip text. */
+  --chip-warning-background: var(--color-warning-bg); /** Pending/in-review status chip background. */
+  --chip-warning-foreground: var(--color-warning); /** Pending/in-review status chip text. */
+  --chip-danger-background: var(--color-danger-bg); /** Rejected/error status chip background. */
+  --chip-danger-foreground: var(--color-danger); /** Rejected/error status chip text. */
+  --input-default-background: var(--color-bg); /** Form control background. */
+  --input-default-border: var(--color-border); /** Form control border, default and resting state. */
+  --input-default-foreground: var(--color-fg); /** Form control text color. */
+  --input-default-radius: var(--radius-sm); /** Form control corner radius. */
+}

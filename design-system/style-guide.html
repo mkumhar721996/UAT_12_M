@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Design System Style Guide</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="prototype-utils.css">
+<style>
+  .sg-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--space-6) var(--space-5);
+  }
+  .sg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-4);
+  }
+  .sg-swatch {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  .sg-swatch-fill {
+    height: 56px;
+  }
+  .sg-swatch-label {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--font-size-sm);
+  }
+  .sg-swatch-label code {
+    display: block;
+    color: var(--color-fg-muted);
+  }
+  .sg-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-4);
+    padding: var(--space-2) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .sg-dim-bar {
+    background: var(--color-primary);
+  }
+  .sg-demo-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: var(--space-3);
+    margin-bottom: var(--space-4);
+  }
+  table.sg-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  table.sg-table th,
+  table.sg-table td {
+    text-align: left;
+    padding: var(--space-2) var(--space-3);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--font-size-sm);
+  }
+  .sg-guidelines h3 {
+    margin-top: var(--space-5);
+  }
+  .sg-guidelines ul {
+    padding-left: var(--space-5);
+  }
+  .sg-guidelines li {
+    margin-bottom: var(--space-2);
+  }
+</style>
+</head>
+<body>
+
+<div class="sg-section">
+  <h1>Design System Style Guide</h1>
+  <p class="text-muted">Tokens, components, and product UI rules for the Workflow &amp; Approvals console.</p>
+
+  <h2>Colors</h2>
+  <div class="sg-grid">
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-bg);"></div>
+      <div class="sg-swatch-label">color-bg<code>--color-bg</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-surface);"></div>
+      <div class="sg-swatch-label">color-surface<code>--color-surface</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-fg);"></div>
+      <div class="sg-swatch-label">color-fg<code>--color-fg</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-fg-muted);"></div>
+      <div class="sg-swatch-label">color-fg-muted<code>--color-fg-muted</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-border);"></div>
+      <div class="sg-swatch-label">color-border<code>--color-border</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-primary);"></div>
+      <div class="sg-swatch-label">color-primary<code>--color-primary</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-primary-fg); border-bottom: 1px solid var(--color-border);"></div>
+      <div class="sg-swatch-label">color-primary-fg<code>--color-primary-fg</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-success);"></div>
+      <div class="sg-swatch-label">color-success<code>--color-success</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-success-bg);"></div>
+      <div class="sg-swatch-label">color-success-bg<code>--color-success-bg</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-warning);"></div>
+      <div class="sg-swatch-label">color-warning<code>--color-warning</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-warning-bg);"></div>
+      <div class="sg-swatch-label">color-warning-bg<code>--color-warning-bg</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-danger);"></div>
+      <div class="sg-swatch-label">color-danger<code>--color-danger</code></div>
+    </div>
+    <div class="sg-swatch">
+      <div class="sg-swatch-fill" style="background: var(--color-danger-bg);"></div>
+      <div class="sg-swatch-label">color-danger-bg<code>--color-danger-bg</code></div>
+    </div>
+  </div>
+
+  <h2>Spacing</h2>
+  <div class="stack" style="gap: var(--space-2);">
+    <div class="sg-row"><span style="width: 100px;">space-1</span><div class="sg-dim-bar" style="width: var(--space-1); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-2</span><div class="sg-dim-bar" style="width: var(--space-2); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-3</span><div class="sg-dim-bar" style="width: var(--space-3); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-4</span><div class="sg-dim-bar" style="width: var(--space-4); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-5</span><div class="sg-dim-bar" style="width: var(--space-5); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-6</span><div class="sg-dim-bar" style="width: var(--space-6); height: 16px;"></div></div>
+  </div>
+
+  <h2>Radii</h2>
+  <div class="sg-demo-row">
+    <div style="width: 64px; height: 64px; background: var(--color-primary); border-radius: var(--radius-sm);"></div>
+    <span class="text-sm">radius-sm</span>
+    <div style="width: 64px; height: 64px; background: var(--color-primary); border-radius: var(--radius-md);"></div>
+    <span class="text-sm">radius-md</span>
+    <div style="width: 64px; height: 64px; background: var(--color-primary); border-radius: var(--radius-lg);"></div>
+    <span class="text-sm">radius-lg</span>
+  </div>
+
+  <h2>Type scale</h2>
+  <div class="stack" style="gap: var(--space-2);">
+    <div style="font-size: var(--font-size-sm);">font-size-sm — Approval queue has 3 items awaiting review.</div>
+    <div style="font-size: var(--font-size-md);">font-size-md — Approval queue has 3 items awaiting review.</div>
+    <div style="font-size: var(--font-size-lg);">font-size-lg — Approval queue has 3 items awaiting review.</div>
+    <div style="font-size: var(--font-size-xl);">font-size-xl — Approval queue has 3 items awaiting review.</div>
+  </div>
+  <p class="text-sm text-muted">font-family-base: <span style="font-family: var(--font-family-base);">The quick brown fox jumps over the lazy dog.</span></p>
+  <p class="text-sm text-muted">font-weight-regular / font-weight-semibold: <span style="font-weight: var(--font-weight-regular);">Regular</span> &nbsp; <span style="font-weight: var(--font-weight-semibold);">Semibold</span></p>
+
+  <h2>Buttons</h2>
+  <div class="sg-demo-row">
+    <button class="btn btn-primary">Approve</button>
+    <button class="btn btn-secondary">View details</button>
+  </div>
+
+  <h2>Card</h2>
+  <div class="card" style="max-width: 360px;">
+    <div class="card-title">Expense report #4821</div>
+    <p class="text-sm text-muted">Submitted by J. Alvarez &middot; 2 days ago</p>
+    <div class="row" style="margin-top: var(--space-3);">
+      <span class="chip chip-warning">Pending</span>
+      <button class="btn btn-primary">Approve</button>
+    </div>
+  </div>
+
+  <h2>Chips</h2>
+  <div class="sg-demo-row">
+    <span class="chip chip-success">Approved</span>
+    <span class="chip chip-warning">Pending</span>
+    <span class="chip chip-danger">Rejected</span>
+  </div>
+
+  <h2>Form controls</h2>
+  <div class="stack" style="max-width: 360px; gap: var(--space-3);">
+    <div class="field">
+      <label for="sg-name">Workflow name</label>
+      <input class="input" id="sg-name" type="text" placeholder="e.g. Vendor onboarding">
+    </div>
+    <div class="field">
+      <label for="sg-owner">Owner</label>
+      <select class="select" id="sg-owner">
+        <option>J. Alvarez</option>
+        <option>M. Chen</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="sg-notes">Notes</label>
+      <textarea class="textarea" id="sg-notes" placeholder="Add context for the approver"></textarea>
+    </div>
+  </div>
+
+  <h2>Token reference</h2>
+  <table class="sg-table">
+    <thead><tr><th>Token</th><th>Type</th><th>CSS variable</th></tr></thead>
+    <tbody>
+      <tr><td>color-bg</td><td>color</td><td><code>--color-bg</code></td></tr>
+      <tr><td>color-surface</td><td>color</td><td><code>--color-surface</code></td></tr>
+      <tr><td>color-fg</td><td>color</td><td><code>--color-fg</code></td></tr>
+      <tr><td>color-fg-muted</td><td>color</td><td><code>--color-fg-muted</code></td></tr>
+      <tr><td>color-border</td><td>color</td><td><code>--color-border</code></td></tr>
+      <tr><td>color-primary</td><td>color</td><td><code>--color-primary</code></td></tr>
+      <tr><td>color-primary-fg</td><td>color</td><td><code>--color-primary-fg</code></td></tr>
+      <tr><td>color-success / color-success-bg</td><td>color</td><td><code>--color-success</code> / <code>--color-success-bg</code></td></tr>
+      <tr><td>color-warning / color-warning-bg</td><td>color</td><td><code>--color-warning</code> / <code>--color-warning-bg</code></td></tr>
+      <tr><td>color-danger / color-danger-bg</td><td>color</td><td><code>--color-danger</code> / <code>--color-danger-bg</code></td></tr>
+      <tr><td>space-1 .. space-6</td><td>dimension</td><td><code>--space-1</code> .. <code>--space-6</code></td></tr>
+      <tr><td>radius-sm / radius-md / radius-lg</td><td>dimension</td><td><code>--radius-sm</code> / <code>--radius-md</code> / <code>--radius-lg</code></td></tr>
+      <tr><td>font-size-sm / md / lg / xl</td><td>dimension</td><td><code>--font-size-sm</code> / <code>--font-size-md</code> / <code>--font-size-lg</code> / <code>--font-size-xl</code></td></tr>
+      <tr><td>font-family-base</td><td>fontFamily</td><td><code>--font-family-base</code></td></tr>
+      <tr><td>font-weight-regular / font-weight-semibold</td><td>fontWeight</td><td><code>--font-weight-regular</code> / <code>--font-weight-semibold</code></td></tr>
+      <tr><td>line-height-base</td><td>number</td><td><code>--line-height-base</code></td></tr>
+      <tr><td>button.primary.*</td><td>alias (color/dimension)</td><td><code>--button-primary-background</code>, <code>--button-primary-foreground</code>, <code>--button-primary-radius</code></td></tr>
+      <tr><td>button.secondary.*</td><td>alias (color)</td><td><code>--button-secondary-background</code>, <code>--button-secondary-foreground</code>, <code>--button-secondary-border</code></td></tr>
+      <tr><td>card.default.*</td><td>alias (color/dimension)</td><td><code>--card-default-background</code>, <code>--card-default-border</code>, <code>--card-default-radius</code>, <code>--card-default-padding</code></td></tr>
+      <tr><td>chip.success/warning/danger.*</td><td>alias (color)</td><td><code>--chip-success-background</code>, <code>--chip-success-foreground</code>, <small>&hellip;</small></td></tr>
+      <tr><td>input.default.*</td><td>alias (color/dimension)</td><td><code>--input-default-background</code>, <code>--input-default-border</code>, <code>--input-default-foreground</code>, <code>--input-default-radius</code></td></tr>
+    </tbody>
+  </table>
+
+  <h2>UI guidelines</h2>
+  <div class="sg-guidelines">
+    <p class="text-muted">Rules for designing and building any screen in this product: an internal console for employees and administrators to design workflows, action tasks/approvals, monitor execution, and manage documents.</p>
+
+    <h3>Navigation</h3>
+    <ul>
+      <li>Persistent left sidebar with the top-level sections (Workflows, Tasks &amp; Approvals, Reports, Documents, Admin) &mdash; the product has five durable sections a user jumps between all day, so a sidebar beats a top bar for at-a-glance orientation across long sessions.</li>
+      <li>No bottom navigation or hamburger collapse on desktop &mdash; this is an internal tool used on laptops/desktops during work hours, not a mobile-first product.</li>
+      <li>Admin-only sections (user/role management, tenant configuration) appear in the sidebar only for users with an admin role, rather than a separate admin app, per the single-Web-App decision for this product.</li>
+    </ul>
+
+    <h3>Layout and density</h3>
+    <ul>
+      <li>Design for a data-dense console, not a spacious consumer app: tasks, approvals, and workflow runs are read in lists/tables all day, so favor compact rows and <code>font-size-sm</code>/<code>font-size-md</code> over large type and whitespace.</li>
+      <li>Primary breakpoint is desktop (&ge;1024px); below that, collapse multi-column layouts (e.g. list + detail) to a single column rather than redesigning components, since the product is used internally on company-issued laptops and tablets are a secondary, occasional case.</li>
+      <li>Keep page-level padding and section gaps consistent using <code>space-5</code>/<code>space-6</code> so dense content doesn't feel cramped against the window edges.</li>
+    </ul>
+
+    <h3>Component usage</h3>
+    <ul>
+      <li>Use <code>.card</code> for a single entity's detail or summary (a workflow definition, a document, a dashboard tile) &mdash; anything a user reads as one unit.</li>
+      <li>Use a table (not <code>.card</code> repeated per row) for any list the user scans, sorts, or filters &mdash; task queues, approval queues, workflow run history &mdash; because comparing fields across rows is the primary job there.</li>
+      <li>Use a plain list only for short, unordered content with no comparable columns (e.g. recent activity, notifications).</li>
+      <li>Use <code>.chip-success</code> / <code>.chip-warning</code> / <code>.chip-danger</code> exclusively for workflow/task/approval status (approved, pending, rejected) so status always reads the same way across the product.</li>
+      <li>Use <code>.btn-primary</code> once per view for the single next action (approve, submit, save); every other action is <code>.btn-secondary</code>, so users always know the one recommended action on screen.</li>
+    </ul>
+
+    <h3>Theme</h3>
+    <ul>
+      <li>Light theme only for this release &mdash; the product is read during the workday on office/laptop displays, where dark mode gives no legibility benefit and would double the design/QA surface for v1.</li>
+    </ul>
+
+    <h3>Voice and tone</h3>
+    <ul>
+      <li>Copy is plain and operational: name the object and the action (&ldquo;Approve expense report&rdquo;, not &ldquo;Let's take a look at this request&rdquo;). Internal business users scan for status and act quickly; they are not a consumer audience that needs persuading or reassurance.</li>
+      <li>Errors and validation messages state what to fix, not just that something is wrong, since the user is mid-task and needs to resolve it, not reassess it.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

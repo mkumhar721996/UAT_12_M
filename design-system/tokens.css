@@ -92,6 +92,14 @@
   --z-backdrop: 40; /** Stacking order of the backdrop. */
   --z-modal: 50; /** Stacking order of modals. */
   --z-toast: 60; /** Stacking order of toasts. */
+  --color-orange-primary: #c2410c; /** Orange primary solid surface for brand/promotional highlights; meets WCAG AA (4.5:1) with color-orange-primary-fg. */
+  --color-orange-primary-fg: #ffffff; /** Text/icons placed on a color-orange-primary surface. */
+  --color-orange-primary-hover: #9a3412; /** Orange primary surface on hover. */
+  --color-orange-primary-active: #7c2d12; /** Orange primary surface while pressed. */
+  --color-orange-secondary: #fed7aa; /** Orange secondary solid surface for lower-emphasis filled elements. */
+  --color-orange-secondary-fg: #7c2d12; /** Text/icons placed on a color-orange-secondary surface. */
+  --color-orange-bg: #fff7ed; /** Light orange tint for orange-highlighted surfaces. */
+  --color-orange-border: #fdba74; /** Border for orange-tinted surfaces. */
   --button-primary-background: var(--color-primary); /** Primary (default) button background. */
   --button-primary-foreground: var(--color-primary-fg); /** Primary button label/icon color. */
   --button-primary-radius: var(--radius-md); /** Primary button corner radius. */

@@ -169,6 +169,18 @@
     <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-accent-bg);"></div><div class="sg-swatch-label">color-accent-bg<code>--color-accent-bg</code></div></div>
   </div>
 
+  <h3 style="margin-top: var(--space-5);">Orange primary and secondary</h3>
+  <div class="sg-grid">
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-primary);"></div><div class="sg-swatch-label">color-orange-primary<code>--color-orange-primary</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-primary-fg); border-bottom: 1px solid var(--color-border);"></div><div class="sg-swatch-label">color-orange-primary-fg<code>--color-orange-primary-fg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-primary-hover);"></div><div class="sg-swatch-label">color-orange-primary-hover<code>--color-orange-primary-hover</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-primary-active);"></div><div class="sg-swatch-label">color-orange-primary-active<code>--color-orange-primary-active</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-secondary);"></div><div class="sg-swatch-label">color-orange-secondary<code>--color-orange-secondary</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-secondary-fg);"></div><div class="sg-swatch-label">color-orange-secondary-fg<code>--color-orange-secondary-fg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-bg);"></div><div class="sg-swatch-label">color-orange-bg<code>--color-orange-bg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-orange-border);"></div><div class="sg-swatch-label">color-orange-border<code>--color-orange-border</code></div></div>
+  </div>
+
   <h3 style="margin-top: var(--space-5);">Neutral scale</h3>
   <div class="sg-grid">
     <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-50);"></div><div class="sg-swatch-label">color-neutral-50<code>--color-neutral-50</code></div></div>
@@ -517,6 +529,8 @@
       <tr><td>color-primary-hover / -active / -bg / -border</td><td>color</td><td><code>--color-primary-hover</code>, <code>--color-primary-active</code>, <code>--color-primary-bg</code>, <code>--color-primary-border</code></td></tr>
       <tr><td>color-secondary / color-secondary-fg</td><td>color</td><td><code>--color-secondary</code>, <code>--color-secondary-fg</code></td></tr>
       <tr><td>color-accent / color-accent-fg / color-accent-bg</td><td>color</td><td><code>--color-accent</code>, <code>--color-accent-fg</code>, <code>--color-accent-bg</code></td></tr>
+      <tr><td>color-orange-primary / -fg / -hover / -active</td><td>color</td><td><code>--color-orange-primary</code>, <code>--color-orange-primary-fg</code>, <code>--color-orange-primary-hover</code>, <code>--color-orange-primary-active</code></td></tr>
+      <tr><td>color-orange-secondary / -fg, color-orange-bg / -border</td><td>color</td><td><code>--color-orange-secondary</code>, <code>--color-orange-secondary-fg</code>, <code>--color-orange-bg</code>, <code>--color-orange-border</code></td></tr>
       <tr><td>color-neutral-50 .. 900</td><td>color</td><td><code>--color-neutral-50</code> .. <code>--color-neutral-900</code></td></tr>
       <tr><td>color-success / warning / danger -hover, -active, -border</td><td>color</td><td><code>--color-success-hover</code>, <code>--color-warning-active</code>, <code>--color-danger-border</code>, &hellip;</td></tr>
       <tr><td>color-info / -bg / -border</td><td>color</td><td><code>--color-info</code>, <code>--color-info-bg</code>, <code>--color-info-border</code></td></tr>
@@ -561,6 +575,7 @@
       <li>Use <code>.alert-*</code> for messages tied to the whole view or form, <code>.toast</code> for confirmation of a completed action, and <code>.field-error</code> for a single field, so feedback appears next to what it is about and at the right level of interruption.</li>
       <li>Use <code>.badge</code> for counts and labels (e.g. open tasks in the sidebar), never for approval status, which belongs to the <code>.chip-*</code> classes &mdash; the two must not be confused.</li>
       <li>Use <code>color-accent</code> sparingly for non-status highlights (e.g. automated steps) and the <code>color-neutral-*</code> scale for everything else that is not an action or status, so blue, green, amber and red keep meaning "act" and "state".</li>
+      <li>Use <code>color-orange-primary</code> and <code>color-orange-secondary</code> only for brand or promotional highlights that are neither an action nor a status, never in place of <code>.btn-primary</code> or the <code>.chip-*</code> classes, so blue stays "act" and amber stays "pending".</li>
       <li>Use <code>.modal</code> only for confirmations that block the task, and <code>.drawer</code> for viewing or editing a record while keeping the list underneath in context.</li>
     </ul>
 

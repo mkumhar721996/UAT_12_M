@@ -1,22 +1,32 @@
-const NAV_ITEMS = [
-  { id: "home", label: "Home", href: "#home", current: true },
-  { id: "records", label: "Records", href: "#records", current: false },
+export type RouteId = "home" | "records" | "expenses" | "categories" | "summary";
+
+const NAV_ITEMS: { id: RouteId; label: string; href: string }[] = [
+  { id: "home", label: "Home", href: "#home" },
+  { id: "records", label: "Records", href: "#records" },
+  { id: "expenses", label: "Expenses", href: "#expenses/new" },
+  { id: "categories", label: "Categories", href: "#categories" },
+  { id: "summary", label: "Summary", href: "#summary" },
 ];
 
-function AppHeader() {
+function AppHeader({ current }: { current: RouteId }) {
   return (
-    <header className="flex items-center gap-space-5 border-b border-border bg-bg px-space-5 py-space-3 max-[720px]:gap-space-3 max-[720px]:px-space-4 max-[720px]:py-space-2">
-      <p className="m-0 text-lg font-semibold text-primary">Health</p>
-      <nav aria-label="Main" className="flex gap-space-2">
+    <header className="shrink-0 border-b border-border bg-surface p-space-3 min-[1024px]:w-[200px] min-[1024px]:border-b-0 min-[1024px]:border-r min-[1024px]:px-space-3 min-[1024px]:py-space-5">
+      <p className="m-0 mb-space-2 px-space-3 text-lg font-semibold text-primary min-[1024px]:mb-space-4">
+        Expenses
+      </p>
+      <nav
+        aria-label="Main"
+        className="flex flex-row flex-wrap gap-space-1 min-[1024px]:flex-col"
+      >
         {NAV_ITEMS.map((item) => (
           <a
             key={item.id}
             href={item.href}
-            aria-current={item.current ? "page" : undefined}
-            className={`inline-flex min-h-[44px] items-center border-b-2 px-space-3 font-semibold no-underline hover:bg-surface ${
-              item.current
-                ? "rounded-t-md border-primary text-primary"
-                : "rounded-md border-transparent text-fg"
+            aria-current={item.id === current ? "page" : undefined}
+            className={`flex min-h-[44px] items-center rounded-md border-l-[3px] px-space-3 font-semibold no-underline hover:bg-bg ${
+              item.id === current
+                ? "border-primary bg-bg text-primary"
+                : "border-transparent text-fg"
             }`}
           >
             {item.label}

@@ -1,12 +1,14 @@
-import AppHeader from "./AppHeader";
 import Dashboard from "./dashboard/Dashboard";
+import HealthRecordsPlaceholder from "./health-records/HealthRecordsPlaceholder";
+import { useHashRoute } from "./routes";
+import SignedInLayout from "./SignedInLayout";
 
 function App() {
+  const route = useHashRoute();
   return (
-    <>
-      <AppHeader />
-      <Dashboard />
-    </>
+    <SignedInLayout current={route}>
+      {route === "health-records" ? <HealthRecordsPlaceholder /> : <Dashboard />}
+    </SignedInLayout>
   );
 }
 

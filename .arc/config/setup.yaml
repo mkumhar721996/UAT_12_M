@@ -5,17 +5,22 @@ components:
     build_command: cd apps/web && pnpm run build
     devloop_command: cd apps/web && pnpm run lint && pnpm run typecheck && pnpm run
       test
+    e2e_command: cd apps/web && pnpm run test:e2e
+    install_command: cd apps/web && pnpm add {name}@{version}
   comp_workflow_api:
     mode: local
     test_command: cd services/workflow-api && pnpm run test:all
     build_command: cd services/workflow-api && pnpm run build
     devloop_command: cd services/workflow-api && pnpm run lint && pnpm run typecheck
       && pnpm run test
+    e2e_command: cd services/workflow-api && pnpm run test:e2e
+    install_command: cd services/workflow-api && pnpm add {name}@{version}
   comp_workflow_worker:
     mode: local
     test_command: cd services/workflow-worker && pnpm test
     build_command: cd services/workflow-worker && pnpm run build
     devloop_command: cd services/workflow-worker && pnpm run typecheck
+    install_command: cd services/workflow-worker && pnpm add {name}@{version}
 commands:
   test: (cd apps/web && pnpm run test) && (cd services/workflow-api && pnpm run test:all)
     && (cd services/workflow-worker && pnpm test)
@@ -24,3 +29,8 @@ commands:
   devloop: (cd apps/web && pnpm run lint && pnpm run typecheck && pnpm run test) &&
     (cd services/workflow-api && pnpm run lint && pnpm run typecheck && pnpm run test)
     && (cd services/workflow-worker && pnpm run typecheck)
+setup_command: (cd apps/web && pnpm install --frozen-lockfile) && (cd services/workflow-api
+  && pnpm install --frozen-lockfile) && (cd services/workflow-worker && pnpm install
+  --frozen-lockfile)
+package_install_commands:
+  pnpm: pnpm add {name}@{version}

@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react";
+import { act, render, screen, waitFor, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import App from "./App";
 
@@ -29,5 +29,21 @@ describe("App", () => {
     const main = within(screen.getByRole("main"));
     expect(main.queryByRole("link", { name: /record/i })).toBeNull();
     expect(main.queryByRole("button", { name: /record/i })).toBeNull();
+  });
+
+  it("links to Expenses, Categories and Summary from the sidebar and opens each", () => {
+    window.location.hash = "#categories";
+    render(<App />);
+    const nav = within(screen.getByRole("navigation", { name: "Main" }));
+    for (const name of ["Expenses", "Categories", "Summary"]) {
+      expect(nav.getByRole("link", { name })).toBeInTheDocument();
+    }
+    expect(screen.getByRole("heading", { name: "Categories" })).toBeInTheDocument();
+    act(() => {
+      window.location.hash = "#summary";
+    });
+    return waitFor(() =>
+      expect(screen.getByRole("heading", { name: "Summary" })).toBeInTheDocument(),
+    );
   });
 });

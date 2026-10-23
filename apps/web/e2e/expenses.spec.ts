@@ -5,6 +5,7 @@ test("summary defaults to the month and updates after adding a Travel expense", 
   await expect(page.getByRole("tab", { name: "Month" })).toHaveAttribute("aria-selected", "true");
 
   await page.getByRole("navigation", { name: "Main" }).getByRole("link", { name: "Expenses" }).click();
+  await page.getByRole("link", { name: "Add expense" }).click();
   await page.getByLabel("Amount").fill("40.00");
   await page.getByLabel("Category").selectOption("Travel");
   await page.getByRole("button", { name: "Save" }).click();

@@ -2,7 +2,9 @@ import { useEffect, useState } from "react";
 import AppHeader, { type RouteId } from "./AppHeader";
 import Dashboard from "./dashboard/Dashboard";
 import CategoryList from "./expenses/CategoryList";
+import ExpenseDetail from "./expenses/ExpenseDetail";
 import ExpenseForm from "./expenses/ExpenseForm";
+import ExpenseList from "./expenses/ExpenseList";
 import { createMemoryExpenseStore } from "./expenses/expenseStore";
 import { todayIso } from "./expenses/period";
 import SummaryView from "./expenses/SummaryView";
@@ -10,11 +12,13 @@ import SummaryView from "./expenses/SummaryView";
 const ROUTES: Record<string, RouteId> = {
   "#categories": "categories",
   "#summary": "summary",
+  "#expenses": "expenses",
   "#expenses/new": "expenses",
   "#records": "records",
 };
 
 function routeFromHash(hash: string): RouteId {
+  if (hash.startsWith("#expenses/")) return "expenses";
   return ROUTES[hash] ?? "home";
 }
 
@@ -22,10 +26,12 @@ function routeFromHash(hash: string): RouteId {
 const store = createMemoryExpenseStore("current-user");
 
 function App() {
-  const [route, setRoute] = useState<RouteId>(() => routeFromHash(window.location.hash));
+  const [hash, setHash] = useState(() => window.location.hash);
+  const route = routeFromHash(hash);
+  const expenseId = hash.startsWith("#expenses/") ? hash.slice("#expenses/".length) : null;
 
   useEffect(() => {
-    const onHashChange = () => setRoute(routeFromHash(window.location.hash));
+    const onHashChange = () => setHash(window.location.hash);
     window.addEventListener("hashchange", onHashChange);
     return () => window.removeEventListener("hashchange", onHashChange);
   }, []);
@@ -35,7 +41,17 @@ function App() {
       <AppHeader current={route} />
       <div className="min-w-0 flex-1">
         {route === "categories" ? <CategoryList /> : null}
-        {route === "expenses" ? (
+        {route === "expenses" && hash === "#expenses" ? <ExpenseList store={store} /> : null}
+        {route === "expenses" && expenseId !== null && expenseId !== "new" ? (
+          <ExpenseDetail
+            store={store}
+            id={expenseId}
+            onDone={() => {
+              window.location.hash = "#expenses";
+            }}
+          />
+        ) : null}
+        {route === "expenses" && expenseId === "new" ? (
           <ExpenseForm
             store={store}
             today={todayIso}

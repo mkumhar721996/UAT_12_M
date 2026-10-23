@@ -3,7 +3,7 @@ export type RouteId = "home" | "records" | "expenses" | "categories" | "summary"
 const NAV_ITEMS: { id: RouteId; label: string; href: string }[] = [
   { id: "home", label: "Home", href: "#home" },
   { id: "records", label: "Records", href: "#records" },
-  { id: "expenses", label: "Expenses", href: "#expenses/new" },
+  { id: "expenses", label: "Expenses", href: "#expenses" },
   { id: "categories", label: "Categories", href: "#categories" },
   { id: "summary", label: "Summary", href: "#summary" },
 ];

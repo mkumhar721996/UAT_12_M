@@ -2,6 +2,7 @@ import { useRef, useState, type FormEvent } from "react";
 import { AlertIcon } from "../dashboard/icons";
 import { CATEGORIES, type Category } from "./categories";
 import type { Expense, ExpenseStore } from "./expenseStore";
+import { parseCents } from "./summary";
 
 interface ExpenseFormProps {
   store: ExpenseStore;
@@ -10,11 +11,6 @@ interface ExpenseFormProps {
 }
 
 type FormError = { field: "amount" | "category"; message: string };
-
-function parseCents(text: string): number | null {
-  if (!/^\d+(\.\d{1,2})?$/.test(text.trim())) return null;
-  return Math.round(Number(text) * 100);
-}
 
 function ExpenseForm({ store, today, onSaved }: ExpenseFormProps) {
   const [amount, setAmount] = useState("");

@@ -24,6 +24,12 @@ export function formatMoney(cents: number): string {
   return `${whole}.${String(Math.abs(cents) % 100).padStart(2, "0")}`;
 }
 
+/** Parses "18" or "18.50" into cents; null when the text is not a plain amount. */
+export function parseCents(text: string): number | null {
+  if (!/^\d+(\.\d{1,2})?$/.test(text.trim())) return null;
+  return Math.round(Number(text) * 100);
+}
+
 export function sharePercent(part: number, overall: number): number {
   return overall === 0 ? 0 : Math.round((part / overall) * 100);
 }

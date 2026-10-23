@@ -45,7 +45,7 @@ export function validateCustomRange(from: string, to: string): RangeResult {
   return { ok: true, range: { from, to } };
 }
 
-function formatDate(iso: string): string {
+export function formatDate(iso: string): string {
   const [y, m, d] = parts(iso);
   return `${d} ${MONTHS[m - 1]} ${y}`;
 }

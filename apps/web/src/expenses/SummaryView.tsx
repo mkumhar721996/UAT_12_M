@@ -1,7 +1,7 @@
 import { useRef, useState, useSyncExternalStore } from "react";
 import { AlertIcon } from "../dashboard/icons";
 import { CATEGORIES } from "./categories";
-import type { ExpenseStore } from "./expenseStore";
+import type { Expense, ExpenseStore } from "./expenseStore";
 import {
   formatRange,
   presetRange,
@@ -115,8 +115,16 @@ function SummaryView({ store, today = todayIso }: SummaryViewProps) {
           <div className="grid grid-cols-4 gap-space-3 max-[640px]:grid-cols-2">
             {CATEGORIES.map((c) => {
               const percent = sharePercent(summary.byCategory[c], summary.overall);
+              const latest = expenses
+                .filter((x) => x.category === c && x.date >= range.from && x.date <= range.to)
+                .reduce<Expense | null>((a, x) => (a && a.date > x.date ? a : x), null);
+              const Tile = latest ? "a" : "div";
               return (
-                <div key={c} className="card flex flex-col gap-space-1">
+                <Tile
+                  key={c}
+                  href={latest ? `#expenses/${latest.id}` : undefined}
+                  className="card flex flex-col gap-space-1 text-fg no-underline"
+                >
                   <span className="tile-label text-sm font-semibold text-fg-muted">{c}</span>
                   <span className="text-xl font-semibold tabular-nums">
                     {formatMoney(summary.byCategory[c])}
@@ -125,7 +133,7 @@ function SummaryView({ store, today = todayIso }: SummaryViewProps) {
                     <i className="block h-full bg-primary" style={{ width: `${percent}%` }} />
                   </span>
                   <span className="text-sm text-fg-muted">{percent}% of total</span>
-                </div>
+                </Tile>
               );
             })}
           </div>

@@ -2,8 +2,8 @@
 id: ADR-0006
 category: component
 title: Job Queue
-status: accepted
-superseded_by: null
+status: superseded
+superseded_by: ADR-0017
 component_id: comp_job_queue
 responsibility: Decouples the Workflow API from asynchronous background processing,
   carrying jobs (notifications, async process steps) to the Workflow Worker. Specific

@@ -2,8 +2,8 @@
 id: ADR-0004
 category: component
 title: Relational Database
-status: accepted
-superseded_by: null
+status: superseded
+superseded_by: ADR-0015
 component_id: comp_relational_database
 responsibility: 'Stores core platform data: users, roles, workflow definitions, tasks,
   approvals, process state, and audit trail. Specific product not yet decided.'

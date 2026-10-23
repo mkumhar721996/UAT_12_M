@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply m-0 bg-bg font-sans text-md text-fg;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible {
+    @apply outline outline-2 outline-offset-2 outline-primary;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex min-h-[44px] cursor-pointer items-center justify-center gap-space-2 rounded-md border border-transparent px-space-4 py-space-2 text-md font-semibold;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-fg;
+  }
+
+  .btn-secondary {
+    @apply border-primary bg-bg text-primary;
+  }
+
+  .card {
+    @apply rounded-lg border border-border bg-surface p-space-4;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-space-1 rounded-sm px-space-3 py-space-1 text-sm font-semibold;
+  }
+
+  .chip-warning {
+    @apply bg-warning-bg text-warning;
+  }
+
+  .field {
+    @apply flex flex-col gap-space-1;
+  }
+
+  .field label {
+    @apply text-sm font-semibold text-fg-muted;
+  }
+
+  .input,
+  .select {
+    @apply min-h-[44px] rounded-sm border border-border bg-bg px-space-3 py-space-2 text-md text-fg focus:border-primary focus:outline-none;
+  }
+}

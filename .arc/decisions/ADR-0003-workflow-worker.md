@@ -2,8 +2,8 @@
 id: ADR-0003
 category: component
 title: Workflow Worker
-status: accepted
-superseded_by: null
+status: superseded
+superseded_by: ADR-0014
 component_id: comp_workflow_worker
 responsibility: 'Executes background and asynchronous work: notifications/alerts and
   longer-running or scheduled workflow/process steps.'

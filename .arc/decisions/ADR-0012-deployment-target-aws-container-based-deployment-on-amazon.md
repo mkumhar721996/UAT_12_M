@@ -3,8 +3,8 @@ id: ADR-0012
 category: deployment_target
 title: "Deployment target: AWS, container-based deployment on Amazon ECS Fargate;\
   \ one stack per\u2026"
-status: accepted
-superseded_by: null
+status: superseded
+superseded_by: ADR-0020
 component_id: null
 decision: AWS, container-based deployment on Amazon ECS Fargate; one stack per organization
   (single-tenant) deployed within a single AWS region initially. Optimized for simplicity/operational

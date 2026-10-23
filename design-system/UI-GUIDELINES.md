@@ -55,6 +55,9 @@ and manage documents.
 - Use `color-accent` sparingly for non-status highlights (e.g. automated steps) and the
   `color-neutral-*` scale for everything else that is not an action or status, so blue, green,
   amber and red keep meaning "act" and "state".
+- Use `color-orange-primary` and `color-orange-secondary` only for brand or promotional highlights
+  that are neither an action nor a status, never in place of `.btn-primary` or the `.chip-*`
+  classes, so blue stays "act" and amber stays "pending".
 - Use `.modal` only for confirmations that block the task, and `.drawer` for viewing or editing a
   record while keeping the list underneath in context.
 

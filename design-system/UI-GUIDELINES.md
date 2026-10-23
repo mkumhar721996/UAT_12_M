@@ -11,6 +11,11 @@ and manage documents.
   sidebar beats a top bar for at-a-glance orientation across long sessions.
 - No bottom navigation or hamburger collapse on desktop — this is an internal tool used on
   laptops/desktops during work hours, not a mobile-first product.
+- Below 1024px the sidebar collapses behind a single menu button in the header (same five
+  sections, same order) so the shell still fits a phone or tablet without a second navigation
+  pattern.
+- Section keys are `workflows`, `tasks`, `reports`, `documents`, `admin`; a screen marks its own
+  section as current with `aria-current="page"` so the sidebar always shows where the user is.
 - Admin-only sections (user/role management, tenant configuration) appear in the sidebar only
   for users with an admin role, rather than a separate admin app, per the single-Web-App
   decision for this product.
@@ -39,6 +44,19 @@ and manage documents.
   status (approved, pending, rejected) so status always reads the same way across the product.
 - Use `.btn-primary` once per view for the single next action (approve, submit, save); every
   other action is `.btn-secondary`, so users always know the one recommended action on screen.
+- Use `.btn-danger` only for the confirming step of a destructive action (delete, revoke, cancel
+  run) and `.btn-ghost` for low-emphasis actions in table rows and toolbars, so destructive
+  intent is never ambiguous and rows stay quiet.
+- Use `.alert-*` for messages tied to the whole view or form, `.toast` for confirmation of a
+  completed action, and `.field-error` for a single field, so feedback appears next to what it
+  is about and at the right level of interruption.
+- Use `.badge` for counts and labels (e.g. open tasks in the sidebar), never for approval status,
+  which belongs to the `.chip-*` classes — the two must not be confused.
+- Use `color-accent` sparingly for non-status highlights (e.g. automated steps) and the
+  `color-neutral-*` scale for everything else that is not an action or status, so blue, green,
+  amber and red keep meaning "act" and "state".
+- Use `.modal` only for confirmations that block the task, and `.drawer` for viewing or editing a
+  record while keeping the list underneath in context.
 
 ## Theme
 

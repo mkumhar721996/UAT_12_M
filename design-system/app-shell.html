@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App Shell</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="prototype-utils.css">
+<style>
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+  }
+  .shell {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 100%;
+  }
+  .shell-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-2) var(--space-4);
+    background: var(--color-bg);
+    border-bottom: var(--border-width-1) solid var(--color-border);
+  }
+  .shell-brand {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-fg);
+    text-decoration: none;
+  }
+  .shell-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+  }
+  .shell-nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    padding: var(--space-3) var(--space-4);
+    background: var(--shell-sidebar-background);
+    border-bottom: var(--border-width-1) solid var(--color-border);
+  }
+  .shell-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    color: var(--color-fg);
+    font-weight: var(--font-weight-semibold);
+    text-decoration: none;
+  }
+  .shell-link:hover {
+    background: var(--shell-nav-hover-background);
+  }
+  .shell-link[aria-current="page"] {
+    background: var(--shell-nav-current-background);
+    color: var(--shell-nav-current-foreground);
+  }
+  .shell-link:focus-visible {
+    outline: var(--border-width-2) solid var(--button-focus-ring);
+    outline-offset: calc(var(--border-width-2) * -1);
+  }
+  .shell-main {
+    flex: 1;
+    min-width: 0;
+    padding: var(--space-5) var(--space-4);
+  }
+  .shell-content {
+    max-width: var(--size-content);
+    margin: 0 auto;
+    min-width: 0;
+  }
+  .shell-footer {
+    padding: var(--space-3) var(--space-4);
+    border-top: var(--border-width-1) solid var(--color-border);
+    font-size: var(--font-size-sm);
+    color: var(--color-fg-muted);
+  }
+  /* Small screens: nav sits behind the menu button (hidden until opened) */
+  .shell-nav.is-open {
+    display: flex !important;
+  }
+  @media (min-width: 1024px) {
+    .shell-menu-button {
+      display: none;
+    }
+    .shell-header {
+      padding: var(--space-3) var(--space-5);
+    }
+    .shell-body {
+      flex-direction: row;
+    }
+    .shell-nav,
+    .shell-nav[hidden] {
+      display: flex !important;
+      flex: none;
+      width: var(--size-sidebar);
+      padding: var(--space-4);
+      border-bottom: 0;
+      border-right: var(--border-width-1) solid var(--color-border);
+    }
+    .shell-main {
+      padding: var(--space-6);
+    }
+    .shell-footer {
+      padding: var(--space-3) var(--space-5);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="shell" data-arc-shell>
+  <header class="shell-header">
+    <button class="btn btn-ghost btn-icon shell-menu-button" type="button" data-toggle="main-nav" aria-controls="main-nav" aria-label="Menu">&#9776;</button>
+    <a class="shell-brand" href="#">Workflow Console</a>
+    <a class="btn btn-ghost btn-sm shell-account" href="#" data-nav-key="account">
+      <span class="avatar" aria-hidden="true">JA</span>
+      <span>Account</span>
+    </a>
+  </header>
+  <div class="shell-body">
+    <nav class="shell-nav" id="main-nav" aria-label="Main" hidden>
+      <a class="shell-link" href="#" data-nav-key="workflows">Workflows</a>
+      <a class="shell-link" href="#" data-nav-key="tasks">Tasks &amp; Approvals</a>
+      <a class="shell-link" href="#" data-nav-key="reports">Reports</a>
+      <a class="shell-link" href="#" data-nav-key="documents">Documents</a>
+      <a class="shell-link" href="#" data-nav-key="admin">Admin</a>
+    </nav>
+    <main class="shell-main">
+      <div class="shell-content" data-arc-content></div>
+    </main>
+  </div>
+  <footer class="shell-footer">Workflow Console &middot; Internal use only</footer>
+</div>
+</body>
+</html>

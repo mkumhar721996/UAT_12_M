@@ -60,6 +60,29 @@
     border-bottom: 1px solid var(--color-border);
     font-size: var(--font-size-sm);
   }
+  .sg-preview {
+    position: relative;
+    transform: translateZ(0);
+    overflow: hidden;
+    height: 240px;
+    margin-bottom: var(--space-4);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-4);
+  }
+  .sg-preview-tall {
+    height: 320px;
+  }
+  .sg-static {
+    position: static;
+    display: flex;
+    transform: none;
+  }
+  .sg-inline-tip {
+    position: relative;
+    display: inline-block;
+    margin-top: var(--space-6);
+  }
   .sg-guidelines h3 {
     margin-top: var(--space-5);
   }
@@ -133,6 +156,49 @@
     </div>
   </div>
 
+  <h3 style="margin-top: var(--space-5);">Primary, secondary and accent (with hover / active states)</h3>
+  <div class="sg-grid">
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-primary-hover);"></div><div class="sg-swatch-label">color-primary-hover<code>--color-primary-hover</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-primary-active);"></div><div class="sg-swatch-label">color-primary-active<code>--color-primary-active</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-primary-bg);"></div><div class="sg-swatch-label">color-primary-bg<code>--color-primary-bg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-primary-border);"></div><div class="sg-swatch-label">color-primary-border<code>--color-primary-border</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-secondary);"></div><div class="sg-swatch-label">color-secondary<code>--color-secondary</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-secondary-fg); border-bottom: 1px solid var(--color-border);"></div><div class="sg-swatch-label">color-secondary-fg<code>--color-secondary-fg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-accent);"></div><div class="sg-swatch-label">color-accent<code>--color-accent</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-accent-fg); border-bottom: 1px solid var(--color-border);"></div><div class="sg-swatch-label">color-accent-fg<code>--color-accent-fg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-accent-bg);"></div><div class="sg-swatch-label">color-accent-bg<code>--color-accent-bg</code></div></div>
+  </div>
+
+  <h3 style="margin-top: var(--space-5);">Neutral scale</h3>
+  <div class="sg-grid">
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-50);"></div><div class="sg-swatch-label">color-neutral-50<code>--color-neutral-50</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-100);"></div><div class="sg-swatch-label">color-neutral-100<code>--color-neutral-100</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-200);"></div><div class="sg-swatch-label">color-neutral-200<code>--color-neutral-200</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-300);"></div><div class="sg-swatch-label">color-neutral-300<code>--color-neutral-300</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-400);"></div><div class="sg-swatch-label">color-neutral-400<code>--color-neutral-400</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-500);"></div><div class="sg-swatch-label">color-neutral-500<code>--color-neutral-500</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-600);"></div><div class="sg-swatch-label">color-neutral-600<code>--color-neutral-600</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-700);"></div><div class="sg-swatch-label">color-neutral-700<code>--color-neutral-700</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-800);"></div><div class="sg-swatch-label">color-neutral-800<code>--color-neutral-800</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-neutral-900);"></div><div class="sg-swatch-label">color-neutral-900<code>--color-neutral-900</code></div></div>
+  </div>
+
+  <h3 style="margin-top: var(--space-5);">Status scales: success, warning, danger/error, info</h3>
+  <div class="sg-grid">
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-success-hover);"></div><div class="sg-swatch-label">color-success-hover<code>--color-success-hover</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-success-active);"></div><div class="sg-swatch-label">color-success-active<code>--color-success-active</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-success-border);"></div><div class="sg-swatch-label">color-success-border<code>--color-success-border</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-warning-hover);"></div><div class="sg-swatch-label">color-warning-hover<code>--color-warning-hover</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-warning-active);"></div><div class="sg-swatch-label">color-warning-active<code>--color-warning-active</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-warning-border);"></div><div class="sg-swatch-label">color-warning-border<code>--color-warning-border</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-danger-hover);"></div><div class="sg-swatch-label">color-danger-hover<code>--color-danger-hover</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-danger-active);"></div><div class="sg-swatch-label">color-danger-active<code>--color-danger-active</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-danger-border);"></div><div class="sg-swatch-label">color-danger-border<code>--color-danger-border</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-info);"></div><div class="sg-swatch-label">color-info<code>--color-info</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-info-bg);"></div><div class="sg-swatch-label">color-info-bg<code>--color-info-bg</code></div></div>
+    <div class="sg-swatch"><div class="sg-swatch-fill" style="background: var(--color-info-border);"></div><div class="sg-swatch-label">color-info-border<code>--color-info-border</code></div></div>
+  </div>
+
   <h2>Spacing</h2>
   <div class="stack" style="gap: var(--space-2);">
     <div class="sg-row"><span style="width: 100px;">space-1</span><div class="sg-dim-bar" style="width: var(--space-1); height: 16px;"></div></div>
@@ -141,6 +207,7 @@
     <div class="sg-row"><span style="width: 100px;">space-4</span><div class="sg-dim-bar" style="width: var(--space-4); height: 16px;"></div></div>
     <div class="sg-row"><span style="width: 100px;">space-5</span><div class="sg-dim-bar" style="width: var(--space-5); height: 16px;"></div></div>
     <div class="sg-row"><span style="width: 100px;">space-6</span><div class="sg-dim-bar" style="width: var(--space-6); height: 16px;"></div></div>
+    <div class="sg-row"><span style="width: 100px;">space-7</span><div class="sg-dim-bar" style="width: var(--space-7); height: 16px;"></div></div>
   </div>
 
   <h2>Radii</h2>
@@ -164,10 +231,34 @@
   <p class="text-sm text-muted">font-weight-regular / font-weight-semibold: <span style="font-weight: var(--font-weight-regular);">Regular</span> &nbsp; <span style="font-weight: var(--font-weight-semibold);">Semibold</span></p>
 
   <h2>Buttons</h2>
+  <h3>Variants</h3>
   <div class="sg-demo-row">
     <button class="btn btn-primary">Approve</button>
     <button class="btn btn-secondary">View details</button>
+    <button class="btn btn-ghost">Cancel</button>
+    <button class="btn btn-danger">Delete workflow</button>
   </div>
+  <h3>Disabled</h3>
+  <div class="sg-demo-row">
+    <button class="btn btn-primary" disabled>Approve</button>
+    <button class="btn btn-secondary" disabled>View details</button>
+    <button class="btn btn-ghost" disabled>Cancel</button>
+    <button class="btn btn-danger" disabled>Delete workflow</button>
+  </div>
+  <h3>Sizes</h3>
+  <div class="sg-demo-row">
+    <button class="btn btn-primary btn-sm">Small</button>
+    <button class="btn btn-primary">Default</button>
+    <button class="btn btn-primary btn-lg">Large</button>
+  </div>
+  <h3>Icon-only</h3>
+  <div class="sg-demo-row">
+    <button class="btn btn-secondary btn-icon btn-sm" aria-label="Add">+</button>
+    <button class="btn btn-secondary btn-icon" aria-label="Add">+</button>
+    <button class="btn btn-secondary btn-icon btn-lg" aria-label="Add">+</button>
+    <button class="btn btn-ghost btn-icon" aria-label="More">&hellip;</button>
+  </div>
+  <p class="text-sm text-muted">Hover, active (pressed) and keyboard focus (<code>:focus-visible</code>) states use the <code>*-hover-background</code>, <code>*-active-background</code> and <code>button-focus-ring</code> tokens; tab to a button to see the ring.</p>
 
   <h2>Card</h2>
   <div class="card" style="max-width: 360px;">
@@ -184,7 +275,29 @@
     <span class="chip chip-success">Approved</span>
     <span class="chip chip-warning">Pending</span>
     <span class="chip chip-danger">Rejected</span>
+    <span class="chip chip-neutral">Draft</span>
+    <span class="chip">Plain chip</span>
   </div>
+
+  <h2>Badges</h2>
+  <div class="sg-demo-row">
+    <span class="badge">3</span>
+    <span class="badge badge-neutral">Neutral</span>
+    <span class="badge badge-success">Success</span>
+    <span class="badge badge-warning">Warning</span>
+    <span class="badge badge-danger">Danger</span>
+  </div>
+
+  <h2>Avatar</h2>
+  <div class="sg-demo-row">
+    <span class="avatar">JA</span>
+    <span class="avatar">MC</span>
+  </div>
+
+  <h2>Divider</h2>
+  <p>Above the divider</p>
+  <hr class="divider">
+  <p>Below the divider</p>
 
   <h2>Form controls</h2>
   <div class="stack" style="max-width: 360px; gap: var(--space-3);">
@@ -202,7 +315,178 @@
     <div class="field">
       <label for="sg-notes">Notes</label>
       <textarea class="textarea" id="sg-notes" placeholder="Add context for the approver"></textarea>
+      <span class="field-hint">Visible to the approver and the workflow owner.</span>
     </div>
+    <div class="field is-invalid">
+      <label for="sg-due">Due date (error)</label>
+      <input class="input is-invalid" id="sg-due" type="text" value="31/02/2026" aria-invalid="true">
+      <span class="field-error">Enter a valid date, e.g. 2026-03-31.</span>
+    </div>
+    <div class="field is-invalid">
+      <label for="sg-owner-err">Owner (error)</label>
+      <select class="select is-invalid" id="sg-owner-err" aria-invalid="true">
+        <option>Select an owner</option>
+      </select>
+      <span class="field-error">Select an owner before saving.</span>
+    </div>
+    <div class="field">
+      <label for="sg-dis">Tenant ID (disabled)</label>
+      <input class="input" id="sg-dis" type="text" value="tenant-0042" disabled>
+    </div>
+    <div class="field">
+      <label for="sg-dis-ta">Notes (disabled)</label>
+      <textarea class="textarea" id="sg-dis-ta" disabled>Locked after approval.</textarea>
+    </div>
+    <div class="field">
+      <label for="sg-dis-sel">Region (disabled)</label>
+      <select class="select" id="sg-dis-sel" disabled><option>EMEA</option></select>
+    </div>
+  </div>
+
+  <h3 style="margin-top: var(--space-5);">Checkbox, radio, switch</h3>
+  <div class="cluster cluster-lg">
+    <label class="choice"><input class="checkbox" type="checkbox"> Unchecked</label>
+    <label class="choice"><input class="checkbox" type="checkbox" checked> Checked</label>
+    <label class="choice"><input class="checkbox is-invalid" type="checkbox"> Invalid</label>
+    <label class="choice"><input class="checkbox" type="checkbox" disabled> Disabled</label>
+    <label class="choice"><input class="checkbox" type="checkbox" checked disabled> Checked, disabled</label>
+  </div>
+  <div class="cluster cluster-lg" style="margin-top: var(--space-3);">
+    <label class="choice"><input class="radio" type="radio" name="sg-r1"> Unselected</label>
+    <label class="choice"><input class="radio" type="radio" name="sg-r1" checked> Selected</label>
+    <label class="choice"><input class="radio is-invalid" type="radio" name="sg-r2"> Invalid</label>
+    <label class="choice"><input class="radio" type="radio" name="sg-r3" disabled> Disabled</label>
+  </div>
+  <div class="cluster cluster-lg" style="margin-top: var(--space-3);">
+    <label class="choice"><input class="switch" type="checkbox" role="switch"> Off</label>
+    <label class="choice"><input class="switch" type="checkbox" role="switch" checked> On</label>
+    <label class="choice"><input class="switch is-invalid" type="checkbox" role="switch"> Invalid</label>
+    <label class="choice"><input class="switch" type="checkbox" role="switch" disabled> Disabled</label>
+    <label class="choice"><input class="switch" type="checkbox" role="switch" checked disabled> On, disabled</label>
+  </div>
+
+  <h2>Dropdown and menu</h2>
+  <div class="sg-preview" style="height: 200px;">
+    <div class="dropdown">
+      <button class="btn btn-secondary" type="button" data-menu aria-haspopup="menu" aria-expanded="true">Status filter &#9662;</button>
+      <div class="dropdown-menu is-open" role="menu">
+        <button class="dropdown-item" type="button" role="menuitemradio" aria-checked="true">All</button>
+        <button class="dropdown-item" type="button" role="menuitemradio" aria-checked="false">Pending</button>
+        <button class="dropdown-item" type="button" role="menuitemradio" aria-checked="false">Approved</button>
+        <button class="dropdown-item" type="button" role="menuitemradio" aria-checked="false" disabled>Archived (disabled)</button>
+      </div>
+    </div>
+  </div>
+  <p class="text-sm text-muted">Closed state: the same <code>.dropdown-menu</code> carries <code>hidden</code> and no <code>.is-open</code>. Inline <code>.menu</code>:</p>
+  <div class="menu" role="menu" style="max-width: 240px;">
+    <button class="dropdown-item" type="button" role="menuitem">Edit workflow</button>
+    <button class="dropdown-item" type="button" role="menuitem">Duplicate</button>
+    <button class="dropdown-item" type="button" role="menuitemcheckbox" aria-checked="true">Notify owner</button>
+  </div>
+
+  <h2>Tabs</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true">Overview</button>
+    <button class="tab" role="tab" aria-selected="false">Runs</button>
+    <button class="tab" role="tab" aria-selected="false">History</button>
+    <button class="tab" role="tab" aria-selected="false" disabled>Settings</button>
+  </div>
+
+  <h2>Accordion / disclosure</h2>
+  <div class="accordion">
+    <details class="disclosure" open>
+      <summary>Approval rules (open)</summary>
+      <div class="disclosure-body">Expense reports above the limit need a second approver.</div>
+    </details>
+    <details class="disclosure">
+      <summary>Notifications (closed)</summary>
+      <div class="disclosure-body">Owners are notified when a run fails.</div>
+    </details>
+  </div>
+
+  <h2>Table</h2>
+  <table class="table">
+    <thead><tr><th>Request</th><th>Submitted by</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Expense report #4821</td><td>J. Alvarez</td><td><span class="chip chip-warning">Pending</span></td></tr>
+      <tr><td>Vendor onboarding #77</td><td>M. Chen</td><td><span class="chip chip-success">Approved</span></td></tr>
+      <tr><td>Access request #310</td><td>R. Patel</td><td><span class="chip chip-danger">Rejected</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Overlays</h2>
+  <h3>Modal + backdrop (open)</h3>
+  <div class="sg-preview sg-preview-tall">
+    <div class="backdrop is-open"></div>
+    <div class="modal is-open" role="dialog" aria-label="Delete workflow">
+      <h3>Delete workflow?</h3>
+      <p class="text-muted">This removes the workflow and its run history. This cannot be undone.</p>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" type="button">Cancel</button>
+        <button class="btn btn-danger" type="button">Delete workflow</button>
+      </div>
+    </div>
+  </div>
+  <h3>Drawer (open, right side)</h3>
+  <div class="sg-preview sg-preview-tall">
+    <div class="drawer is-open" role="dialog" aria-label="Request details">
+      <h3>Expense report #4821</h3>
+      <p class="text-muted">Submitted by J. Alvarez &middot; 2 days ago</p>
+      <span class="chip chip-warning" style="align-self: flex-start;">Pending</span>
+    </div>
+  </div>
+  <h3>Toast (open)</h3>
+  <div class="sg-preview" style="height: 120px;">
+    <div class="toast is-open" role="status">Expense report approved.</div>
+  </div>
+  <h3>Tooltip (open)</h3>
+  <div class="sg-inline-tip">
+    <button class="btn btn-secondary btn-icon" aria-label="Help">?</button>
+    <div class="tooltip is-open" role="tooltip">Approvals over the limit need two approvers.</div>
+  </div>
+  <p class="text-sm text-muted">Closed state for all four overlays: <code>hidden</code> attribute, no <code>.is-open</code>.</p>
+
+  <h2>Alerts</h2>
+  <div class="stack" style="gap: var(--space-3);">
+    <div class="alert alert-info"><div class="alert-title">Info</div>Approvals are processed every 5 minutes.</div>
+    <div class="alert alert-success"><div class="alert-title">Success</div>Workflow published.</div>
+    <div class="alert alert-warning"><div class="alert-title">Warning</div>Two approvers are out of office this week.</div>
+    <div class="alert alert-danger"><div class="alert-title">Error</div>Run failed at step 3. Reconnect the HR system and retry.</div>
+  </div>
+
+  <h2>Empty state, skeleton, spinner</h2>
+  <div class="card">
+    <div class="empty-state">
+      <h3>No approvals waiting</h3>
+      <p>New requests assigned to you will appear here.</p>
+      <button class="btn btn-secondary">View all tasks</button>
+    </div>
+  </div>
+  <div class="stack" style="gap: var(--space-2); max-width: 360px; margin-top: var(--space-4);">
+    <div class="skeleton" style="width: 60%;"></div>
+    <div class="skeleton"></div>
+    <div class="skeleton" style="width: 80%;"></div>
+  </div>
+  <div class="sg-demo-row" style="margin-top: var(--space-4);">
+    <span class="spinner" role="status" aria-label="Loading"></span>
+    <span class="text-sm text-muted">Loading runs&hellip;</span>
+  </div>
+
+  <h2>Layout helpers</h2>
+  <p class="text-sm text-muted"><code>.stack</code> (vertical, <code>space-4</code>; <code>.stack-sm</code> / <code>.stack-lg</code>), <code>.row</code>, <code>.cluster</code> (wrapping), <code>.grid</code> (auto-fit; <code>.grid-2</code>/<code>.grid-3</code>/<code>.grid-4</code> collapse below 1024px).</p>
+  <div class="stack stack-sm" style="margin-bottom: var(--space-4);">
+    <div class="card">stack-sm item 1</div>
+    <div class="card">stack-sm item 2</div>
+  </div>
+  <div class="cluster cluster-sm" style="margin-bottom: var(--space-4);">
+    <span class="chip chip-success">cluster-sm</span>
+    <span class="chip chip-warning">cluster-sm</span>
+    <span class="chip chip-danger">cluster-sm</span>
+  </div>
+  <div class="grid grid-3">
+    <div class="card">grid-3 cell</div>
+    <div class="card">grid-3 cell</div>
+    <div class="card">grid-3 cell</div>
   </div>
 
   <h2>Token reference</h2>
@@ -230,6 +514,19 @@
       <tr><td>card.default.*</td><td>alias (color/dimension)</td><td><code>--card-default-background</code>, <code>--card-default-border</code>, <code>--card-default-radius</code>, <code>--card-default-padding</code></td></tr>
       <tr><td>chip.success/warning/danger.*</td><td>alias (color)</td><td><code>--chip-success-background</code>, <code>--chip-success-foreground</code>, <small>&hellip;</small></td></tr>
       <tr><td>input.default.*</td><td>alias (color/dimension)</td><td><code>--input-default-background</code>, <code>--input-default-border</code>, <code>--input-default-foreground</code>, <code>--input-default-radius</code></td></tr>
+      <tr><td>color-primary-hover / -active / -bg / -border</td><td>color</td><td><code>--color-primary-hover</code>, <code>--color-primary-active</code>, <code>--color-primary-bg</code>, <code>--color-primary-border</code></td></tr>
+      <tr><td>color-secondary / color-secondary-fg</td><td>color</td><td><code>--color-secondary</code>, <code>--color-secondary-fg</code></td></tr>
+      <tr><td>color-accent / color-accent-fg / color-accent-bg</td><td>color</td><td><code>--color-accent</code>, <code>--color-accent-fg</code>, <code>--color-accent-bg</code></td></tr>
+      <tr><td>color-neutral-50 .. 900</td><td>color</td><td><code>--color-neutral-50</code> .. <code>--color-neutral-900</code></td></tr>
+      <tr><td>color-success / warning / danger -hover, -active, -border</td><td>color</td><td><code>--color-success-hover</code>, <code>--color-warning-active</code>, <code>--color-danger-border</code>, &hellip;</td></tr>
+      <tr><td>color-info / -bg / -border</td><td>color</td><td><code>--color-info</code>, <code>--color-info-bg</code>, <code>--color-info-border</code></td></tr>
+      <tr><td>space-7, radius-pill, border-width-1/2</td><td>dimension</td><td><code>--space-7</code>, <code>--radius-pill</code>, <code>--border-width-1</code>, <code>--border-width-2</code></td></tr>
+      <tr><td>size-control-sm/md/lg, size-check, size-switch-*, size-avatar</td><td>dimension</td><td><code>--size-control-md</code>, <code>--size-check</code>, <code>--size-switch-width</code>, <code>--size-avatar</code>, &hellip;</td></tr>
+      <tr><td>size-sidebar, size-menu-min, size-drawer, size-modal, size-toast, size-tooltip, size-field, size-content</td><td>dimension</td><td><code>--size-sidebar</code>, <code>--size-drawer</code>, <code>--size-modal</code>, &hellip;</td></tr>
+      <tr><td>opacity-overlay / opacity-disabled, duration-spin / duration-pulse, z-*</td><td>number</td><td><code>--opacity-overlay</code>, <code>--duration-spin</code>, <code>--z-modal</code>, &hellip;</td></tr>
+      <tr><td>button.primary/secondary/ghost/danger hover, active, focus-ring</td><td>alias (color)</td><td><code>--button-primary-hover-background</code>, <code>--button-danger-active-background</code>, <code>--button-focus-ring</code>, &hellip;</td></tr>
+      <tr><td>input hover, focus, invalid, disabled, placeholder, checked, switch-off</td><td>alias (color)</td><td><code>--input-invalid-border</code>, <code>--input-checked-background</code>, &hellip;</td></tr>
+      <tr><td>badge / chip-neutral / avatar / tab / menu / overlay / toast / alert / skeleton / spinner / shell</td><td>alias (color)</td><td><code>--badge-neutral-background</code>, <code>--alert-danger-border</code>, <code>--menu-item-hover-background</code>, <code>--shell-nav-current-background</code>, &hellip;</td></tr>
     </tbody>
   </table>
 
@@ -241,6 +538,8 @@
     <ul>
       <li>Persistent left sidebar with the top-level sections (Workflows, Tasks &amp; Approvals, Reports, Documents, Admin) &mdash; the product has five durable sections a user jumps between all day, so a sidebar beats a top bar for at-a-glance orientation across long sessions.</li>
       <li>No bottom navigation or hamburger collapse on desktop &mdash; this is an internal tool used on laptops/desktops during work hours, not a mobile-first product.</li>
+      <li>Below 1024px the sidebar collapses behind a single menu button in the header (same five sections, same order) so the shell still fits a phone or tablet without a second navigation pattern.</li>
+      <li>Section keys are <code>workflows</code>, <code>tasks</code>, <code>reports</code>, <code>documents</code>, <code>admin</code>; a screen marks its own section as current with <code>aria-current="page"</code> so the sidebar always shows where the user is.</li>
       <li>Admin-only sections (user/role management, tenant configuration) appear in the sidebar only for users with an admin role, rather than a separate admin app, per the single-Web-App decision for this product.</li>
     </ul>
 
@@ -258,6 +557,11 @@
       <li>Use a plain list only for short, unordered content with no comparable columns (e.g. recent activity, notifications).</li>
       <li>Use <code>.chip-success</code> / <code>.chip-warning</code> / <code>.chip-danger</code> exclusively for workflow/task/approval status (approved, pending, rejected) so status always reads the same way across the product.</li>
       <li>Use <code>.btn-primary</code> once per view for the single next action (approve, submit, save); every other action is <code>.btn-secondary</code>, so users always know the one recommended action on screen.</li>
+      <li>Use <code>.btn-danger</code> only for the confirming step of a destructive action (delete, revoke, cancel run) and <code>.btn-ghost</code> for low-emphasis actions in table rows and toolbars, so destructive intent is never ambiguous and rows stay quiet.</li>
+      <li>Use <code>.alert-*</code> for messages tied to the whole view or form, <code>.toast</code> for confirmation of a completed action, and <code>.field-error</code> for a single field, so feedback appears next to what it is about and at the right level of interruption.</li>
+      <li>Use <code>.badge</code> for counts and labels (e.g. open tasks in the sidebar), never for approval status, which belongs to the <code>.chip-*</code> classes &mdash; the two must not be confused.</li>
+      <li>Use <code>color-accent</code> sparingly for non-status highlights (e.g. automated steps) and the <code>color-neutral-*</code> scale for everything else that is not an action or status, so blue, green, amber and red keep meaning "act" and "state".</li>
+      <li>Use <code>.modal</code> only for confirmations that block the task, and <code>.drawer</code> for viewing or editing a record while keeping the list underneath in context.</li>
     </ul>
 
     <h3>Theme</h3>

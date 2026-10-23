@@ -33,6 +33,65 @@
   --font-size-md: 14px; /** Default body and control text. */
   --font-size-lg: 18px; /** Card titles, section headings. */
   --font-size-xl: 22px; /** Page titles. */
+  --color-primary-hover: #1d4ed8; /** Primary surface on hover. */
+  --color-primary-active: #1e40af; /** Primary surface while pressed. */
+  --color-primary-bg: #eff6ff; /** Light primary tint: hover on secondary buttons, selected rows and menu items. */
+  --color-primary-border: #bfdbfe; /** Border for primary-tinted surfaces. */
+  --color-secondary: #475569; /** Secondary solid surface for lower-emphasis filled elements (avatars, solid neutral badges). */
+  --color-secondary-fg: #ffffff; /** Text/icons placed on a color-secondary surface. */
+  --color-accent: #7c3aed; /** Accent for highlights that are not status or actions: new-feature markers, AI/automation indicators. */
+  --color-accent-fg: #ffffff; /** Text/icons placed on a color-accent surface. */
+  --color-accent-bg: #f1eafe; /** Background tint for accent highlights. */
+  --color-neutral-50: #f8fafc; /** Neutral scale, lightest: subtle fills, text on dark surfaces. */
+  --color-neutral-100: #f1f5f9; /** Neutral scale: hover fills, disabled backgrounds, skeletons. */
+  --color-neutral-200: #e2e8f0; /** Neutral scale: pressed fills, skeleton highlight, switch track off. */
+  --color-neutral-300: #cbd5e1; /** Neutral scale: strong borders, shadow tint. */
+  --color-neutral-400: #94a3b8; /** Neutral scale: disabled text and icons (not for readable content). */
+  --color-neutral-500: #64748b; /** Neutral scale: placeholder text, icons. */
+  --color-neutral-600: #475569; /** Neutral scale: strong secondary text. */
+  --color-neutral-700: #334155; /** Neutral scale: neutral badge text. */
+  --color-neutral-800: #1e293b; /** Neutral scale: inverted surfaces such as toasts and tooltips. */
+  --color-neutral-900: #0f172a; /** Neutral scale, darkest: modal backdrop base. */
+  --color-success-hover: #166534; /** Success surface/text on hover. */
+  --color-success-active: #14532d; /** Success surface/text while pressed. */
+  --color-success-border: #86efac; /** Border for success-tinted surfaces. */
+  --color-warning-hover: #92400e; /** Warning surface/text on hover. */
+  --color-warning-active: #78350f; /** Warning surface/text while pressed. */
+  --color-warning-border: #fcd34d; /** Border for warning-tinted surfaces. */
+  --color-danger-hover: #991b1b; /** Danger/error surface/text on hover. */
+  --color-danger-active: #7f1d1d; /** Danger/error surface/text while pressed. */
+  --color-danger-border: #fca5a5; /** Border for danger-tinted surfaces and invalid fields' halo. */
+  --color-info: #0369a1; /** Informational text and icons. */
+  --color-info-bg: #e0f2fe; /** Background tint for informational alerts. */
+  --color-info-border: #7dd3fc; /** Border for informational alerts. */
+  --space-7: 48px; /** Large empty-state and hero padding. */
+  --radius-pill: 999px; /** Fully rounded: badges, avatars, switches. */
+  --border-width-1: 1px; /** Default border and divider thickness. */
+  --border-width-2: 2px; /** Focus ring and selected-tab indicator thickness. */
+  --size-control-sm: 28px; /** Minimum height of small controls. */
+  --size-control-md: 36px; /** Minimum height of default controls. */
+  --size-control-lg: 44px; /** Minimum height of large controls. */
+  --size-check: 16px; /** Checkbox, radio and switch thumb size. */
+  --size-switch-width: 36px; /** Switch track width. */
+  --size-switch-height: 20px; /** Switch track height. */
+  --size-avatar: 32px; /** Avatar diameter. */
+  --size-sidebar: 240px; /** Width of the persistent sidebar on desktop. */
+  --size-menu-min: 192px; /** Minimum width of dropdown menus. */
+  --size-drawer: 400px; /** Width of the right-hand drawer. */
+  --size-modal: 480px; /** Maximum width of a modal. */
+  --size-toast: 320px; /** Maximum width of a toast. */
+  --size-tooltip: 240px; /** Maximum width of a tooltip. */
+  --size-field: 360px; /** Comfortable maximum width of a form field. */
+  --size-content: 1200px; /** Maximum width of page content. */
+  --opacity-overlay: 0.5; /** Opacity of the modal backdrop (over color-neutral-900). */
+  --opacity-disabled: 0.5; /** Opacity of disabled controls. */
+  --duration-spin: 0.8; /** Seconds per spinner revolution. */
+  --duration-pulse: 1.5; /** Seconds per skeleton shimmer pulse. */
+  --z-dropdown: 10; /** Stacking order of dropdown menus and tooltips. */
+  --z-drawer: 30; /** Stacking order of the drawer. */
+  --z-backdrop: 40; /** Stacking order of the backdrop. */
+  --z-modal: 50; /** Stacking order of modals. */
+  --z-toast: 60; /** Stacking order of toasts. */
   --button-primary-background: var(--color-primary); /** Primary (default) button background. */
   --button-primary-foreground: var(--color-primary-fg); /** Primary button label/icon color. */
   --button-primary-radius: var(--radius-md); /** Primary button corner radius. */
@@ -53,4 +112,69 @@
   --input-default-border: var(--color-border); /** Form control border, default and resting state. */
   --input-default-foreground: var(--color-fg); /** Form control text color. */
   --input-default-radius: var(--radius-sm); /** Form control corner radius. */
+  --button-primary-hover-background: var(--color-primary-hover); /** Primary button background on hover. */
+  --button-primary-active-background: var(--color-primary-active); /** Primary button background while pressed. */
+  --button-secondary-hover-background: var(--color-primary-bg); /** Secondary button background on hover. */
+  --button-secondary-active-background: var(--color-primary-border); /** Secondary button background while pressed. */
+  --button-ghost-foreground: var(--color-fg); /** Ghost button label/icon color. */
+  --button-ghost-hover-background: var(--color-neutral-100); /** Ghost button background on hover. */
+  --button-ghost-active-background: var(--color-neutral-200); /** Ghost button background while pressed. */
+  --button-danger-background: var(--color-danger); /** Danger (destructive) button background. */
+  --button-danger-foreground: var(--color-primary-fg); /** Danger button label/icon color. */
+  --button-danger-hover-background: var(--color-danger-hover); /** Danger button background on hover. */
+  --button-danger-active-background: var(--color-danger-active); /** Danger button background while pressed. */
+  --button-focus-ring: var(--color-primary); /** Keyboard focus ring color for buttons and all focusable controls. */
+  --input-hover-border: var(--color-neutral-400); /** Form control border on hover. */
+  --input-focus-border: var(--color-primary); /** Form control border when focused. */
+  --input-invalid-border: var(--color-danger); /** Form control border in error state. */
+  --input-disabled-background: var(--color-neutral-100); /** Disabled form control background. */
+  --input-disabled-foreground: var(--color-neutral-400); /** Disabled form control text. */
+  --input-placeholder-foreground: var(--color-neutral-500); /** Placeholder text color. */
+  --input-checked-background: var(--color-primary); /** Checked checkbox/radio and on-state switch background. */
+  --input-switch-off-background: var(--color-neutral-300); /** Switch track in off state. */
+  --card-default-shadow-color: var(--color-neutral-200); /** Soft shadow color for raised cards and popups. */
+  --badge-neutral-background: var(--color-neutral-100); /** Neutral badge background. */
+  --badge-neutral-foreground: var(--color-neutral-700); /** Neutral badge text. */
+  --badge-success-background: var(--color-success); /** Solid success badge background. */
+  --badge-warning-background: var(--color-warning); /** Solid warning badge background. */
+  --badge-danger-background: var(--color-danger); /** Solid danger badge background. */
+  --badge-solid-foreground: var(--color-primary-fg); /** Text on solid success/warning/danger badges. */
+  --chip-neutral-background: var(--color-neutral-100); /** Neutral chip background. */
+  --chip-neutral-foreground: var(--color-neutral-700); /** Neutral chip text. */
+  --chip-neutral-border: var(--color-border); /** Neutral chip border. */
+  --avatar-default-background: var(--color-secondary); /** Avatar background. */
+  --avatar-default-foreground: var(--color-secondary-fg); /** Avatar initials color. */
+  --tab-selected-foreground: var(--color-primary); /** Selected tab label color. */
+  --tab-selected-border: var(--color-primary); /** Selected tab indicator color. */
+  --tab-hover-background: var(--color-neutral-100); /** Tab background on hover. */
+  --menu-default-background: var(--color-bg); /** Dropdown menu and menu background. */
+  --menu-default-border: var(--color-border); /** Dropdown menu border. */
+  --menu-item-hover-background: var(--color-neutral-100); /** Menu item background on hover/focus. */
+  --menu-item-checked-background: var(--color-primary-bg); /** Checked menu item background. */
+  --menu-item-checked-foreground: var(--color-primary); /** Checked menu item text. */
+  --overlay-backdrop-background: var(--color-neutral-900); /** Backdrop base color (combined with opacity-overlay). */
+  --overlay-surface-background: var(--color-bg); /** Modal and drawer surface. */
+  --overlay-surface-border: var(--color-border); /** Modal and drawer border. */
+  --toast-default-background: var(--color-neutral-800); /** Toast and tooltip background. */
+  --toast-default-foreground: var(--color-neutral-50); /** Toast and tooltip text. */
+  --alert-info-background: var(--color-info-bg); /** Info alert background. */
+  --alert-info-border: var(--color-info-border); /** Info alert border. */
+  --alert-info-accent: var(--color-info); /** Info alert accent bar and title. */
+  --alert-success-background: var(--color-success-bg); /** Success alert background. */
+  --alert-success-border: var(--color-success-border); /** Success alert border. */
+  --alert-success-accent: var(--color-success); /** Success alert accent bar and title. */
+  --alert-warning-background: var(--color-warning-bg); /** Warning alert background. */
+  --alert-warning-border: var(--color-warning-border); /** Warning alert border. */
+  --alert-warning-accent: var(--color-warning); /** Warning alert accent bar and title. */
+  --alert-danger-background: var(--color-danger-bg); /** Danger alert background. */
+  --alert-danger-border: var(--color-danger-border); /** Danger alert border. */
+  --alert-danger-accent: var(--color-danger); /** Danger alert accent bar and title. */
+  --skeleton-default-background: var(--color-neutral-200); /** Skeleton placeholder base. */
+  --skeleton-default-highlight: var(--color-neutral-100); /** Skeleton shimmer highlight. */
+  --spinner-default-track: var(--color-neutral-200); /** Spinner track. */
+  --spinner-default-indicator: var(--color-primary); /** Spinner moving arc. */
+  --shell-sidebar-background: var(--color-surface); /** App-shell sidebar background. */
+  --shell-nav-hover-background: var(--color-neutral-100); /** Navigation item background on hover. */
+  --shell-nav-current-background: var(--color-primary-bg); /** Current navigation item background. */
+  --shell-nav-current-foreground: var(--color-primary); /** Current navigation item text. */
 }

@@ -1,6 +1,8 @@
 const NAV_ITEMS = [
   { id: "home", label: "Home", href: "#home", current: true },
   { id: "records", label: "Records", href: "#records", current: false },
+  { id: "backlog", label: "Backlog", href: "#backlog", current: false },
+  { id: "stories", label: "Stories", href: "#stories", current: false },
 ];
 
 function AppHeader() {

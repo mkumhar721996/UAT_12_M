@@ -11,7 +11,8 @@
     "typecheck": "tsc -b --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:e2e:qa": "playwright test -c playwright.qa.config.ts"
   },
   "dependencies": {
     "react": "^18.3.1",

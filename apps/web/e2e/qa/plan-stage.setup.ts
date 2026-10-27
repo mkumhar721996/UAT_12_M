@@ -16,6 +16,7 @@ setup("create a refined story in the existing project", async ({ page }) => {
   await page.getByLabel(/email|username/i).fill(user);
   await page.getByLabel(/password/i).fill(password);
   await page.getByRole("button", { name: /sign in|log in/i }).click();
+  await page.waitForURL((url) => !/log-?in|sign-?in/i.test(url.pathname));
   await page.context().storageState({ path: authFile });
 
   const storyTitle = `arc-e2e-plan-${Date.now()}`;

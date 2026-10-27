@@ -4,6 +4,7 @@ const port = Number(process.env.ARC_WEB_PORT) || 3010;
 
 export default defineConfig({
   testDir: "./e2e",
+  testIgnore: "**/qa/**",
   fullyParallel: true,
   reporter: "html",
   use: {

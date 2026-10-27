@@ -1,4 +1,5 @@
 import { expect, type APIRequestContext } from "@playwright/test";
+import { apiUrl } from "./apiUrl";
 
 // Assumed Workflow API contract, reached through the Playwright baseURL (a proxy at /api).
 export const PROJECT_ID = "proj_1ce836f0";
@@ -11,7 +12,7 @@ export interface Story {
   refinementStatus: "none" | "running" | "done" | "failed";
 }
 
-const storiesPath = `/api/projects/${PROJECT_ID}/stories`;
+const storiesPath = apiUrl(`/api/projects/${PROJECT_ID}/stories`);
 
 export async function createStory(
   api: APIRequestContext,
